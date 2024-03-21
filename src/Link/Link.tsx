@@ -24,6 +24,7 @@ interface LinkProps
   extends PolymorphicComponentPropsWithRef<'a', LinkVariantProps> {
   isExternal?: boolean;
   href: string;
+  prefetch?: boolean;
 }
 
 type LinkComponent = (props: LinkProps) => React.ReactElement | null;
@@ -36,6 +37,7 @@ export const Link: LinkComponent = forwardRef((props: LinkProps, ref) => {
     size,
     variant,
     weight,
+    prefetch = false,
     ...rest
   } = props;
 
@@ -51,5 +53,5 @@ export const Link: LinkComponent = forwardRef((props: LinkProps, ref) => {
     return <a rel="noopener noreferrer" {...linkProps} />;
   }
 
-  return <InternalLink {...linkProps} />;
+  return <InternalLink prefetch={prefetch} {...linkProps} />;
 });
