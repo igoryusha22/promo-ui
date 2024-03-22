@@ -18,7 +18,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
   const { className, isExternal, cta, description, href, title } = props;
 
   return (
-    <div className={cn('flex flex-col', className)} ref={ref}>
+    <div className={cn('flex flex-col items-start', className)} ref={ref}>
       <Link
         className="mb-1"
         href={href}
