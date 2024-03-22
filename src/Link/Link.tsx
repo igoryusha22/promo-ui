@@ -50,7 +50,7 @@ export const Link: LinkComponent = forwardRef((props: LinkProps, ref) => {
   };
 
   if (isExternal) {
-    return <a rel="noopener noreferrer" {...linkProps} />;
+    return <a rel="noopener noreferrer" target="_blank" {...linkProps} />;
   }
 
   return <InternalLink prefetch={prefetch} {...linkProps} />;
